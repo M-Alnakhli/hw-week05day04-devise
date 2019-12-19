@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @car.name %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @car.model %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @car.year %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back', cars_path %>
+
+<%= link_to 'New Car', new_car_path %>
+<%if user_signed_in?%>
+<%= link_to 'sing_Out',destroy_user_session_path(current_user) ,method: :delete%>
+<%else%>
+<%=link_to 'sign in',new_user_session_path%>
+<%end%>

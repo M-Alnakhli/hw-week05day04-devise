@@ -1,0 +1,14 @@
+<h1>Editing Car</h1>
+<p id="notice"><%= notice %></p>
+
+<%= render 'form', car: @car %>
+
+<%= link_to 'Show', @car %> |
+<%= link_to 'Back', cars_path %>
+
+<%= link_to 'New Car', new_car_path %>
+<%if user_signed_in?%>
+<%= link_to 'sing_Out',destroy_user_session_path(current_user) ,method: :delete%>
+<%else%>
+<%=link_to 'sign in',new_user_session_path%>
+<%end%>
